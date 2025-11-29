@@ -102,3 +102,40 @@ export default function App() {
     }
   };
 
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.title}>FileSystem Asset Test</Text>
+      </View>
+
+      <View style={styles.buttonContainer}>
+        <Button title="Test 1: expo-asset (Standard)" onPress={testExpoAsset} />
+        <View style={styles.spacer} />
+        <Button
+          title="Test 2: Paths.bundle (Native)"
+          color="#841584"
+          onPress={testNativeBundle}
+        />
+        <View style={styles.spacer} />
+        <Button title="Clear Logs" color="gray" onPress={() => setLogs([])} />
+      </View>
+
+      <Text style={styles.logLabel}>Logs:</Text>
+      <ScrollView
+        style={styles.logsContainer}
+        contentContainerStyle={styles.logsContent}
+      >
+        {logs.length === 0 ? (
+          <Text style={styles.placeholder}>Press a button to test...</Text>
+        ) : (
+          logs.map((l, i) => (
+            <Text key={i} style={styles.logText}>
+              {l}
+            </Text>
+          ))
+        )}
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+

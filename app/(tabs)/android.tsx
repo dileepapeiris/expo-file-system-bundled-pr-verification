@@ -18,3 +18,14 @@ import {
   View,
 } from "react-native";
 
+export default function App() {
+  const [logs, setLogs] = useState<string[]>([]);
+
+  const log = (message: string) => {
+    setLogs((prev) => [
+      `[${new Date().toLocaleTimeString()}] ${message}`,
+      ...prev,
+    ]);
+    console.log(message);
+  };
+

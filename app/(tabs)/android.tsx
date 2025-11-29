@@ -71,3 +71,34 @@ export default function App() {
     }
   };
 
+  /**
+   * TEST 2: The Native Way (Paths.bundle)
+   * This requires manual file placement in android/ios folders.
+   * If you haven't moved a file there, this test will log that the file is missing.
+   */
+  const testNativeBundle = async () => {
+    try {
+      log("🟣 Starting Paths.bundle test...");
+      log(`Bundle Path: ${Paths.bundle}`);
+
+      const fileName = "example.txt";
+      const file = new File(Paths.bundle, fileName);
+
+      if (file.exists) {
+        log(`✅ Found '${fileName}' in native bundle!`);
+
+        const content = await file.text();
+        log(`File Content: "${content}"`);
+      } else {
+        log(`⚠️ File '${fileName}' not found in native bundle.`);
+        log("ℹ️ To fix this test:");
+        log('1. Create "example.txt" with some text inside.');
+        log('2. Android: Move to "android/app/src/main/assets/"');
+        log('3. iOS: Add to Xcode project root & check "Target Membership"');
+        log("4. Rebuild the native app (npx expo run:android)");
+      }
+    } catch (error: any) {
+      log(`❌ Error in native bundle test: ${error.message}`);
+    }
+  };
+

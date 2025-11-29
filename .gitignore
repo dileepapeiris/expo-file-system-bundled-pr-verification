@@ -1,0 +1,23 @@
+# Expo
+.expo/
+.expo-shared/
+dist/
+
+# Expo CLI generated types
+expo-env.d.ts
+
+# React Native / Metro / Yarn
+node_modules/
+npm-debug.*
+yarn-debug.log*
+yarn-error.log*
+yarn.lock
+
+# Bundler caches
+.cache/
+metro-cache/
+*.pack
+
+# Misc
+.DS_Store
+*.log

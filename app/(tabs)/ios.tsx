@@ -68,3 +68,48 @@ export default function IOSTest() {
     }
   };
 
+  /**
+   * TEST 2: The Native Way (Paths.bundle) - iOS Specific
+   * UPDATED: Uses .copy() to fix iOS Permission Errors.
+   */
+  const testNativeBundle = async () => {
+    try {
+      log("🟣 Starting Paths.bundle test (iOS)...");
+
+      const fileName = "example.txt";
+
+      // 1. Reference the file in the read-only Bundle
+      // iOS: .../FileSystemTest.app/example.txt
+      const bundleFile = new File(Paths.bundle, fileName);
+
+      if (bundleFile.exists) {
+        log(`✅ Found '${fileName}' in iOS bundle!`);
+
+        // 2. WORKAROUND: Copy to Cache
+        // Direct reading from Bundle (bundleFile.text()) fails on iOS due to permissions.
+        // We must copy it to a writable location (Paths.cache) first.
+        const cacheFile = new File(Paths.cache, fileName);
+
+        if (cacheFile.exists) {
+          log("Deleting old file in cache...");
+          cacheFile.delete();
+        }
+
+        log("Copying to cache to avoid permission errors...");
+        bundleFile.copy(cacheFile);
+
+        // 3. Read from the Cache file
+        const content = await cacheFile.text();
+        log(`File Content: "${content}"`);
+      } else {
+        log(` File '${fileName}' not found in iOS bundle.`);
+        log(" To fix this test:");
+        log('1. Create "example.txt" with some text inside.');
+        log('2. iOS: Add to Xcode project root & check "Target Membership"');
+        log("3. Rebuild the native app (npx expo run:ios)");
+      }
+    } catch (error: any) {
+      log(`❌ Error in native bundle test: ${error.message}`);
+    }
+  };
+

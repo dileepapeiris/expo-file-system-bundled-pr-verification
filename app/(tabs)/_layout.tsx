@@ -24,3 +24,30 @@ export default function TabLayout() {
         tabBarButton: HapticTab,
       }}
     >
+      <Tabs.Screen
+        name="index"
+        options={{
+          href: null,
+        }}
+      />
+      <Tabs.Screen
+        name="ios"
+        options={{
+          title: "iOS",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="apple.logo" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="android"
+        options={{
+          title: "Android",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="server.rack" color={color} />
+          ),
+        }}
+      />
+    </Tabs>
+  );
+}

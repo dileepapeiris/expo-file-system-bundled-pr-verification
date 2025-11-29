@@ -151,3 +151,56 @@ export default function IOSTest() {
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+  },
+  header: {
+    padding: 20,
+    backgroundColor: "#fff",
+    borderBottomWidth: 1,
+    borderBottomColor: "#ddd",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  subtitle: {
+    fontSize: 14,
+    color: "#666",
+    marginTop: 4,
+  },
+  buttonContainer: {
+    padding: 20,
+  },
+  spacer: {
+    height: 10,
+  },
+  logLabel: {
+    marginLeft: 20,
+    fontWeight: "600",
+    marginBottom: 5,
+  },
+  logsContainer: {
+    flex: 1,
+    marginHorizontal: 20,
+    marginBottom: 20,
+    backgroundColor: "#000",
+    borderRadius: 8,
+  },
+  logsContent: {
+    padding: 10,
+  },
+  logText: {
+    color: "#0f0",
+    fontFamily: "monospace",
+    fontSize: 12,
+    marginBottom: 4,
+  },
+  placeholder: {
+    color: "#666",
+    fontStyle: "italic",
+  },
+});

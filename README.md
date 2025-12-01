@@ -162,8 +162,8 @@ The following table demonstrates the expected output for both methods on both pl
 
 | Feature | Android | iOS |
 | :--- | :--- | :--- |
-| **Normal Assets**<br>*(expo-asset)* | <video src="https://github.com/user-attachments/assets/8bf10fc2-bd3a-4d22-a4bc-883746b80f32" controls width="250"></video> | <video src="https://github.com/user-attachments/assets/8d071381-a364-4627-a813-14041d2177ce" controls width="250"></video> |
-| **Bundle Path**<br>*(Paths.bundle)* | <video src="https://github.com/user-attachments/assets/8153c0b7-ad7d-4951-afb1-1ab428ce37d0" controls width="250"></video> | <video src="https://github.com/user-attachments/assets/ff7976ab-5929-4c0a-b652-89db0d57c2d8" controls width="250"></video> |
+| **Normal Assets**<br>*(expo-asset)* | <video src="https://github.com/user-attachments/assets/8bf10fc2-bd3a-4d22-a4bc-883746b80f32" controls width="380"></video> | <video src="https://github.com/user-attachments/assets/8d071381-a364-4627-a813-14041d2177ce" controls width="250"></video> |
+| **Bundle Path**<br>*(Paths.bundle)* | <video src="https://github.com/user-attachments/assets/8153c0b7-ad7d-4951-afb1-1ab428ce37d0" controls width="380"></video> | <video src="https://github.com/user-attachments/assets/ff7976ab-5929-4c0a-b652-89db0d57c2d8" controls width="250"></video> |
 
 ---
 

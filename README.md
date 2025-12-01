@@ -12,7 +12,7 @@ The guide below explains how to clone this example repo, run it on Android/iOS, 
 ## 1. Clone & Install
 
 ```bash
-git clone https://github.com/<your-username>/expo-file-system-bundled-pr-verification.git
+git clone https://github.com/dileepapeiris/expo-file-system-bundled-pr-verification.git
 cd expo-file-system-bundled-pr-verification
 npm install
 ```
@@ -45,8 +45,7 @@ The `Paths.bundle` example will **NOT** work unless `example.txt` is manually ad
 
 2.  Copy the example file:
     ```bash
-    # Assuming example.txt is in your root or assets folder
-    cp assets/example.txt android/app/src/main/assets/
+    cp exampleFile/example.txt android/app/src/main/assets/
     ```
 
 ### iOS Setup
@@ -70,7 +69,7 @@ This ensures the file becomes part of the raw iOS Main Bundle.
 
 ---
 
-## ▶️ 4. Running the Example App
+## 4. Running the Example App
 
 Now that the native files are in place, run the app.
 
@@ -100,7 +99,7 @@ import { File } from 'expo-file-system';
 
 const doSomethingWithAsset = async () => {
   // 1. Resolve asset from JS
-  const asset = Asset.fromModule(require('./assets/example.txt'));
+  const asset = Asset.fromModule(require('./assets/images/icon.png'));
   
   // 2. Ensure downloaded
   await asset.downloadAsync();
@@ -163,10 +162,11 @@ The following table demonstrates the expected output for both methods on both pl
 
 | Feature | Android | iOS |
 | :--- | :--- | :--- |
-| **Normal Assets**<br>*(expo-asset)* | [Watch Android Normal](https://github.com/user-attachments/assets/8bf10fc2-bd3a-4d22-a4bc-883746b80f32) | [Watch iOS Normal](https://github.com/user-attachments/assets/8d071381-a364-4627-a813-14041d2177ce) |
-| **Bundle Path**<br>*(Paths.bundle)* | [Watch Android Bundle](https://github.com/user-attachments/assets/8153c0b7-ad7d-4951-afb1-1ab428ce37d0) | [Watch iOS Bundle](https://github.com/user-attachments/assets/ff7976ab-5929-4c0a-b652-89db0d57c2d8) |
+| **Normal Assets**<br>*(expo-asset)* | <video src="https://github.com/user-attachments/assets/8bf10fc2-bd3a-4d22-a4bc-883746b80f32" controls width="250"></video> | <video src="https://github.com/user-attachments/assets/8d071381-a364-4627-a813-14041d2177ce" controls width="250"></video> |
+| **Bundle Path**<br>*(Paths.bundle)* | <video src="https://github.com/user-attachments/assets/8153c0b7-ad7d-4951-afb1-1ab428ce37d0" controls width="250"></video> | <video src="https://github.com/user-attachments/assets/ff7976ab-5929-4c0a-b652-89db0d57c2d8" controls width="250"></video> |
 
 ---
+
 
 ## 7. Verification Checklist
 

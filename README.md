@@ -172,9 +172,9 @@ The following table demonstrates the expected output for both methods on both pl
 
 If the documentation and implementation are correct, you should see:
 
-- [ ] **`expo-asset` Tab:** Content loads correctly using `Asset.fromModule(require(...))`.
-- [ ] **`Paths.bundle` Tab (Android):** Reads file directly from native assets.
-- [ ] **`Paths.bundle` Tab (iOS):** Successfully copies the file from the bundle to documents, then reads it.
+- [x] **`expo-asset` Tab:** Content loads correctly using `Asset.fromModule(require(...))`.
+- [x] **`Paths.bundle` Tab (Android):** Reads file directly from native assets.
+- [x] **`Paths.bundle` Tab (iOS):** Successfully copies the file from the bundle to documents, then reads it.
 
 ### Conclusion
 This setup validates:

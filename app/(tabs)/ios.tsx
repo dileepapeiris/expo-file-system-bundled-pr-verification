@@ -36,7 +36,7 @@ export default function IOSTest() {
    */
   const testExpoAsset = async () => {
     try {
-      log("🔵 Starting expo-asset test (iOS)...");
+      log("Starting expo-asset test (iOS)...");
 
       // 1. Resolve asset
       const asset = Asset.fromModule(require("../../assets/images/icon.png"));
@@ -74,7 +74,7 @@ export default function IOSTest() {
    */
   const testNativeBundle = async () => {
     try {
-      log("🟣 Starting Paths.bundle test (iOS)...");
+      log("Starting Paths.bundle test (iOS)...");
 
       const fileName = "example.txt";
 
@@ -83,23 +83,23 @@ export default function IOSTest() {
       const bundleFile = new File(Paths.bundle, fileName);
 
       if (bundleFile.exists) {
-        log(`✅ Found '${fileName}' in iOS bundle!`);
+        log(`Found '${fileName}' in iOS bundle!`);
 
         // 2. WORKAROUND: Copy to Cache
         // Direct reading from Bundle (bundleFile.text()) fails on iOS due to permissions.
         // We must copy it to a writable location (Paths.cache) first.
-        const cacheFile = new File(Paths.cache, fileName);
+        const documentFile = new File(Paths.document, fileName);
 
-        if (cacheFile.exists) {
+        if (documentFile.exists) {
           log("Deleting old file in cache...");
-          cacheFile.delete();
+          documentFile.delete();
         }
 
         log("Copying to cache to avoid permission errors...");
-        bundleFile.copy(cacheFile);
+        bundleFile.copy(documentFile);
 
         // 3. Read from the Cache file
-        const content = await cacheFile.text();
+        const content = await documentFile.text();
         log(`File Content: "${content}"`);
       } else {
         log(` File '${fileName}' not found in iOS bundle.`);
@@ -109,7 +109,7 @@ export default function IOSTest() {
         log("3. Rebuild the native app (npx expo run:ios)");
       }
     } catch (error: any) {
-      log(`❌ Error in native bundle test: ${error.message}`);
+      log(`Error in native bundle test: ${error.message}`);
     }
   };
 
